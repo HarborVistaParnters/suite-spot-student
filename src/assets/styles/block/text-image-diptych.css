@@ -1,0 +1,31 @@
+.text-image-diptych {
+    --panes-gap: var(--space-2xl);
+
+    & img {
+        object-fit: cover;
+        aspect-ratio: var(--ratio-portrait);
+        border-radius: var(--rounded-md);
+        box-shadow: var(--shadow-large);
+    }
+
+    & .images {
+        position: relative;
+        display: flex;
+
+        & .image-wrapper:has(.featured) {
+            transform: scale(1.1) translate(-24px, -24px);
+            order: 2;
+        }
+
+        & .image-wrapper:has(.secondary) {
+            transform: scale(1.1) translate(24px, 24px);
+            order: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .text-image-diptych {
+        --panes-gap: var(--space-3xl);
+    }
+}

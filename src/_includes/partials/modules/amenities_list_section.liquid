@@ -1,0 +1,14 @@
+<section aria-labelledby="{{ module.heading | slugify }}" class="amenities-list">
+    <div class="content-wrapper">
+        <h2 id="{{ module.heading | slugify }}" class="text-white text-center">{{ module.heading }}</h2>
+        <div class="fluid-grid">
+            {% for amenity in amenities_list.items %}
+                <div class="amenity | flow presto">
+                    <i class="fa-sharp fa-light fa-lg fa-{{ amenity.icon -}}"></i>
+                    <p>{{ amenity.title }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% sanity_image module.image "1400" "lazy" true "bg-image" %}
+</section>

@@ -1,0 +1,14 @@
+.tag {
+    font-size: var(--tag-size, var(--step-0));
+    font-weight: var(--font-medium-weight);
+    background-color: var(--tag-bg, var(--neutral-3));
+    color: var(--tag-text, var(--theme--text));
+    border-radius: var(--rounded-sm);
+    padding-block: 0.2rem;
+    padding-inline: 0.5rem;
+
+    &.success {
+        --tag-bg: var(--success-4);
+        --tag-text: var(--success-11);
+    }
+}

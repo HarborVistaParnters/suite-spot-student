@@ -1,0 +1,24 @@
+<section aria-labelledby="{{ module.heading | slugify }}" class="location | section-spacing">
+    <div class="rounded-section-wrapper with-bg-image">
+        <div class="content-wrapper slim">
+            <div class="flow moderato">
+                <h2 id="{{ module.heading | slugify }}" class="text-white text-center">{{ module.heading }}</h2>
+                <p class="text-white text-center">{{ module.preview }}</p>
+                <div class="walkscore">
+                    <div class="number">{{ module.walkscore.score }}</div>
+                    <div class="label small-title">{{ module.walkscore.label }}</div>
+                </div>
+                <div class="walk-highlights | fluid-grid" data-layout="thirds">
+                    {% for highlight in module.walk_highlights %}
+                        <div class="text-white text-center">
+                            <i class="fa-sharp fa-light fa-xl fa-{{ highlight.icon -}}"></i>
+                            <p class="title">{{ highlight.title }}</p>
+                            <p class="small-title">{{ highlight.distance }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% sanity_image module.image "1400" "lazy" true "bg-image" %}
+    </div>
+</section>

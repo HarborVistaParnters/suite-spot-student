@@ -1,0 +1,77 @@
+.listing-card {
+    max-width: 30rem;
+
+    & h3 {
+        font-size: var(--step-1);
+    }
+
+    & .image-wrapper {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        border-radius: var(--rounded-sm);
+
+        & .tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        &:hover img {
+            transform: scale(1.08);
+        }
+    }
+
+    & img {
+        transition: transform 0.4s;
+    }
+
+    & .address {
+        & .small-title {
+            color: var(--neutral-11);
+            font-size: var(--step--2);
+            margin-block-start: 6px;
+        }
+    }
+
+    & .info {
+        &.cluster {
+            --cluster-space: var(--space-2xs);
+        }
+
+        & .available {
+            color: var(--success-11);
+            font-weight: var(--font-medium-weight);
+        }
+
+        & + a {
+            --flow-space: var(--space-s);
+        }
+    }
+}
+
+.property-preview {
+    --panes-gap: var(--space-2xl);
+
+    & .image-wrapper {
+        position: relative;
+        display: flex;
+        aspect-ratio: 6/4;
+        border-radius: var(--rounded-md);
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        & img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .property-preview {
+        --panes-gap: var(--space-l);
+    }
+}

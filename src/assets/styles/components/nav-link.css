@@ -1,0 +1,12 @@
+.nav-link {
+    font-weight: var(--font-medium-weight);
+    text-decoration: none;
+    border-radius: var(--rounded-sm);
+    padding-block: 0.25em;
+    padding-inline: 0.5em;
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: var(--neutral-3);
+    }
+}

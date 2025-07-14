@@ -1,0 +1,8 @@
+.logo {
+    display: block;
+    width: fit-content;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}

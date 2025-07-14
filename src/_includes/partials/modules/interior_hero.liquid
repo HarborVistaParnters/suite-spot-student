@@ -1,0 +1,16 @@
+<section class="hero" aria-labelledby="{{ module.heading | slugify }}">
+    <div class="rounded-section-wrapper with-bg-image">
+        <div class="content-wrapper">
+            {% comment %} Replace {% endcomment %}
+            <h1 id="{{ module.heading | slugify }}" class="text-white text-center">{{ module.heading }}</h1>
+        </div>
+        <img
+            src="{{ module.background_image.src }}"
+            alt="{{ module.background_image.alt }}"
+            class="bg-image"
+            loading="eager"
+            eleventy:widths="1400,900"
+            sizes="auto"
+        >
+    </div>
+</section>

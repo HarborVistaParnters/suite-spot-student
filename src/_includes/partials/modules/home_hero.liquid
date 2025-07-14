@@ -1,0 +1,24 @@
+<section aria-labelledby="{{ module.heading | slugify }}" class="hero">
+    <div class="rounded-section-wrapper with-bg-image">
+        <div class="content-wrapper">
+            <div class="panes" data-composition="diptych" data-offset="left">
+                <div class="flow moderato">
+                    <h1 id="{{ module.heading | slugify }}" class="text-white">{{ module.heading }}</h1>
+                    <p class="text-step-1 text-white">{{ module.preview }}</p>
+                    <div class="ctas | cluster">
+                        {% for link in module.ctas %}
+                            {%- capture style -%} data-theme="{{ link.style }}" {%- endcapture -%}
+                            {% sanity_link link 'button-link' style %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="featured">
+                    {% assign listing_count = collections.property_listing.size %}
+                    <a href="#current-listings" class="text">{{ listing_count }} Available Rooms</a>
+                    {% sanity_image module.featured_box.image "800,1052" "eager" true "aspect-portrait" %}
+                </div>
+            </div>
+        </div>
+        {% sanity_image module.image "1600,950" "eager" true "bg-image" %}
+    </div>
+</section>

@@ -1,0 +1,20 @@
+<header class="site-header">
+    <div class="cluster">
+        <a href="/" class="logo">
+            {% render 'partials/svg/logo-web-header.svg' %}
+        </a>
+        <nav>
+            <ul class="cluster">
+                {% for item in navigation.items %}
+                    <li>
+                        {%- unless forloop.last -%}
+                            {% sanity_link item "nav-link" %}
+                        {%- else -%}
+                            {% sanity_link item "button-link" "data-theme='gradient'" %}
+                        {%- endunless -%}
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</header>

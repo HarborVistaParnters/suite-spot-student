@@ -1,0 +1,10 @@
+<section aria-labelledby="{{ module.heading | slugify }}" class="current-listings-list | section-spacing">
+    <div class="content-wrapper">
+        <h2 id="{{ module.heading | slugify }}">{{ module.heading }}</h2>
+        <div class="fluid-grid" data-layout="thirds">
+            {% for listing in collections.property_listing %}
+                {% render 'partials/components/listing_preview.liquid', listing: listing %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,11 @@
+{% layout 'layouts/base.liquid' %}
+
+{% block main %}
+<main class="interior" data-page-id="{{ data._id }}">
+    {% render 'partials/components/page_header.liquid', page_header: data.page_header %}
+    {% for section in data.modules %}
+        {%- capture path -%} partials/modules/{{ section._type }}.liquid {%- endcapture -%}
+        {% render path, module: section, collections: collections, amenities_list: sanity.property_amenities %}
+    {% endfor %}
+</main>
+{% endblock %}

@@ -1,0 +1,8 @@
+<section class="hero" aria-labelledby="{{ page_header.heading | slugify }}">
+    <div class="rounded-section-wrapper with-bg-image">
+        <div class="content-wrapper">
+            <h1 id="{{ page_header.heading | slugify }}" class="text-white text-center">{{ page_header.heading }}</h1>
+        </div>
+        {% sanity_image page_header.image "1400" "eager" true "bg-image" %}
+    </div>
+</section>

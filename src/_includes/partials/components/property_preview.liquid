@@ -1,0 +1,17 @@
+<article
+    class="property-preview | panes"
+    data-composition="diptych"
+    data-layout="{%- if index == 1 -%} flipped {%- else -%} normal {%- endif -%}"
+>
+    {% comment %}Need filter to resolve modulo operator for dynamic layout above{% endcomment %}
+    <div class="flow moderato">
+        <h3 id="{{ property.title | slugify }}">{{ property.title }}</h3>
+        <div class="rich-text | flow">
+            {{ property.preview | rich_text_to_html }}
+        </div>
+        <a href="{{ url }}" class="button-link" data-theme="gradient">Learn More</a>
+    </div>
+    <div class="image-wrapper">
+        {% sanity_image property.image "900" %}
+    </div>
+</article>

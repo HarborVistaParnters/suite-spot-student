@@ -1,0 +1,22 @@
+{% layout 'layouts/base.liquid' %}
+
+{% block main %}
+<main class="property interior" data-page-id="{{ data._id }}">
+    <section class="hero" aria-labelledby="{{ data.title | slugify }}">
+        <div class="rounded-section-wrapper with-bg-image">
+            <div class="content-wrapper">
+                <h1 id="{{ data.title | slugify }}" class="text-white text-center">{{ data.title }}</h1>
+            </div>
+            {% sanity_image data.image "1400" "eager" true "bg-image" %}
+        </div>
+    </section>
+    <section class="section-spacing">
+        <div class="content-wrapper slim">
+            <div class="rich-text | flow">
+                {{ data.property_description.blocks | rich_text_to_html }}
+            </div>
+            {% comment %} Add current listings {% endcomment %}
+        </div>
+    </section>
+</main>
+{% endblock %}

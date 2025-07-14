@@ -1,0 +1,49 @@
+<article class="listing-card | flow presto">
+    {% comment %}
+        {% for property in properties %}
+            {% if property.fileSlug == listing.property_reference %}
+                {% assign linked_property = property %}
+            {% endif %}
+        {% endfor %}
+    {% endcomment %}
+    <a href="{{ listing.contact_url }}" target="_blank" class="image-wrapper">
+        {% sanity_image listing.image "800" "lazy" true "aspect-landscape" %}
+        {% comment %}
+            <img
+                src="{{ listing.featured_image.src }}"
+                alt="{{ listing.featured_image.alt }}"
+                class="aspect-landscape"
+                eleventy:widths="800"
+            >
+        {% endcomment %}
+        <div class="tag success">{{ listing.rent | format_currency }}</div>
+    </a>
+    <header class="address">
+        <h3>
+            {{- listing.property.location.address }}
+            #{{ listing.title -}}
+        </h3>
+        <p class="small-title">{{ listing.property.location | get_property_address: 'location' }}</p>
+    </header>
+    <div class="info | cluster">
+        {% comment %}
+            <span>{{ linked_property.data.total_beds }} Bed/{{ linked_property.data.total_baths }} Bath</span
+            ><span class="divider">•</span>
+        {% endcomment %}
+        {% assign currently_available = listing.available_on | is_before_now %}
+        <span class="available"
+            >Available
+            {% if currently_available %} NOW {% else %}{{- listing.available_on | short_date -}}{% endif -%}
+        </span>
+    </div>
+    <a
+        href="{{ listing.contact_url }}"
+        target="_blank"
+        class="button-link"
+        data-size="small"
+        data-theme="dark"
+    >
+        View Details
+        <i class="fa-sharp fa-light fa-arrow-right"></i>
+    </a>
+</article>

@@ -1,0 +1,52 @@
+{% comment %} General {% endcomment %}
+<title>
+    {%- unless data._id == 'b451e470-6379-42fa-839e-3cd3c2850996' -%}
+        {%- if data.seo.title -%}
+            {{- data.seo.title -}}
+        {%- else -%}
+            {{- data.title -}}
+        {%- endif %}
+        •
+        {{ site_settings.site_name -}}
+    {%- else -%}
+        {%- if data.seo.title -%}
+            {{- data.seo.title }}
+            •
+            {{ site_settings.site_name -}}
+        {%- else -%}
+            {{ site_settings.seo.title }}
+        {%- endif -%}
+    {%- endunless -%}
+</title>
+<meta
+    name="description"
+    content="{%- if data.seo.description -%}{{ data.seo.description }}{%- else -%}{{ site_settings.seo.description }}{%- endif -%}"
+>
+<link rel="canonical" href="{{ site_settings.site_domain | append: page.url }}">
+<meta name="generator" content="{{ eleventy.generator }}">
+<meta name="robots" content="index, follow">
+{% comment %} Basic OpenGraph {% endcomment %}
+<meta
+    property="og:title"
+    content="{%- if data.open_graph.title -%}{{ data.open_graph.title }}{%- elsif data.seo.title -%}{{ data.seo.title }}{%- else -%}{{ site_settings.seo.title }}{%- endif -%}"
+>
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site_settings.site_domain | append: page.url }}">
+<meta
+    property="og:image"
+    content="{%- if data.open_graph.image.asset -%}{% og_image data.open_graph.image site_settings.site_domain %}{%- else -%}{% og_image site_settings.open_graph.image site_settings.site_domain %}{%- endif -%}"
+>
+{% comment %} Optional OpenGraph {% endcomment %}
+<meta
+    property="og:description"
+    content="{%- if data.seo.description -%}{{ data.seo.description }}{%- else -%}{{ site_settings.seo.description }}{%- endif -%}"
+>
+<meta property="og:site_name" content="{{ site_settings.site_name }}">
+<meta property="og:locale" content="en_US">
+{% comment %} Favicon {% endcomment %}
+{% comment %}
+    <link rel="icon" type="image/png" href="" sizes="32x32">
+    <link rel="icon" type="image/png" href="" sizes="16x16">
+{% endcomment %}
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.svg">

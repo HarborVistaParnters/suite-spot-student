@@ -1,0 +1,31 @@
+<section
+    aria-labelledby="{{ module.heading | slugify }}"
+    class="
+        property-list |
+        section-spacing
+    "
+>
+    <div class="content-wrapper">
+        <h2 id="{{ module.heading | slugify }}" class="visually-hidden">{{ module.heading }}</h2>
+        <div class="flow largo">
+            {% for item in module.items %}
+                {% assign property = collections.property | find: 'data.data._id', item._ref %}
+                {% render 'partials/components/property_preview.liquid',
+                    property: property.data.data,
+                    url: property.url,
+                    index: forloop.index0
+                %}
+            {% endfor %}
+            {% comment %} Replace {% endcomment %}
+            {% comment %}
+                {% for property in collections.property %}
+                    {% render 'partials/components/property_preview.liquid',
+                        property: property.data,
+                        url: property.url,
+                        index: forloop.index0
+                    %}
+                {% endfor %}
+            {% endcomment %}
+        </div>
+    </div>
+</section>

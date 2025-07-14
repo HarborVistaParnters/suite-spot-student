@@ -1,0 +1,28 @@
+<footer class="site-footer">
+    <div class="content-wrapper grid-12">
+        <div class="flow presto">
+            <a href="/" class="logo">
+                {% render 'partials/svg/logo-web-footer.svg' %}
+            </a>
+            <a href="mailto:{{ site_settings.site_contact }}" class="block-link">{{ site_settings.site_contact }}</a>
+        </div>
+        <div class="flow allegro">
+            {% for item in navigation.items %}
+                {% sanity_link item "nav-link small-title" %}
+            {% endfor %}
+        </div>
+        <div class="flow allegro">
+            <a href="https://suitespot.appfolio.com/connect/users/sign_in" target="_blank">Tenant Portal</a>
+        </div>
+    </div>
+    {% sanity_image site_settings.footer_image "1400" "lazy" true "bg-image" %}
+    <div class="subfooter">
+        <div class="content-wrapper cluster">
+            <div>
+                © {% get_current_year %}
+                {{ site_settings.site_name -}}
+            </div>
+            <div>Site design by <a href="https://ds-design-studio.com/" target="_blank">DS Design</a></div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,6 @@
+.contact-form {
+    & form {
+        max-width: 35rem;
+        margin-inline: auto;
+    }
+}

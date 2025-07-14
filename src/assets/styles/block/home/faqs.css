@@ -1,0 +1,20 @@
+.home .faqs {
+    & .grid-12 {
+        margin-block-start: var(--space-xl);
+        gap: var(--space-xl);
+
+        & > * {
+            grid-column: span 6;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home .faqs {
+        & .grid-12 {
+            & > * {
+                grid-column: inherit;
+            }
+        }
+    }
+}

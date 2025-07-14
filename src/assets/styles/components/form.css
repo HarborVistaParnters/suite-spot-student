@@ -1,0 +1,61 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    padding: var(--space-m);
+    box-shadow: var(--shadow-large);
+    border-radius: var(--rounded-md);
+
+    & .form-item {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2xs);
+    }
+
+    & .form-item:has(:is(input[required], textarea[required])) label::after {
+        content: "*";
+        color: red;
+    }
+
+    & .split {
+        display: flex;
+        gap: var(--space-s);
+
+        & > .form-item {
+            flex: 1 1 50%;
+        }
+    }
+
+    & label {
+        font-size: var(--step--1);
+        font-weight: var(--font-medium-weight);
+    }
+
+    & :is(input:is([type="text"], [type="email"]), textarea) {
+        border-radius: var(--rounded-sm);
+        padding-block: 3px;
+        padding-inline: 8px;
+        border: 1px solid var(--neutral-7);
+
+        &:focus-visible {
+            border-color: var(--secondary-9);
+            outline-color: var(--secondary-10);
+        }
+    }
+
+    & button {
+        width: fit-content;
+
+        &:focus-visible {
+            outline-color: var(--primary-9);
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    form {
+        & .split {
+            flex-direction: column;
+        }
+    }
+}

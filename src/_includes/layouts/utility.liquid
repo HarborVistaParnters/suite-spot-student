@@ -1,0 +1,14 @@
+{% layout 'layouts/base.liquid' %}
+
+{% block main %}
+<main class="utility interior" data-page-id="{{ data._id }}">
+    {% render 'partials/components/page_header.liquid', page_header: data.page_header %}
+    {% if data._id == '0e287de1-042a-4ed5-9322-89a2a64ccbcb' %}
+        {% render 'partials/modules/contact_form.liquid',
+            text: 'Contact us for more information about our available listings and process.'
+        %}
+    {% else %}
+        {% render 'partials/modules/emphasis_text.liquid', text: 'Thank you, we’ve received your submission!' %}
+    {% endif %}
+</main>
+{% endblock %}

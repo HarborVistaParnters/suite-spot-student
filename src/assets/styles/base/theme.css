@@ -1,0 +1,98 @@
+:root {
+    color-scheme: light;
+
+    /*** Color aliases from Radix UI */
+    /* Neutral */
+    --neutral-1: var(--gray-1);
+    --neutral-2: var(--gray-2);
+    --neutral-3: var(--gray-3);
+    --neutral-4: var(--gray-4);
+    --neutral-5: var(--gray-5);
+    --neutral-6: var(--gray-6);
+    --neutral-7: var(--gray-7);
+    --neutral-8: var(--gray-8);
+    --neutral-9: var(--gray-9);
+    --neutral-10: var(--gray-10);
+    --neutral-11: var(--gray-11);
+    --neutral-12: var(--gray-12);
+
+    /* Primary */
+    --primary-1: var(--blue-1);
+    --primary-2: var(--blue-2);
+    --primary-3: var(--blue-3);
+    --primary-4: var(--blue-4);
+    --primary-5: var(--blue-5);
+    --primary-6: var(--blue-6);
+    --primary-7: var(--blue-7);
+    --primary-8: var(--blue-8);
+    --primary-9: var(--blue-9);
+    --primary-10: var(--blue-10);
+    --primary-11: var(--blue-11);
+    --primary-12: var(--blue-12);
+
+    /* Secondary */
+    --secondary-1: var(--violet-1);
+    --secondary-2: var(--violet-2);
+    --secondary-3: var(--violet-3);
+    --secondary-4: var(--violet-4);
+    --secondary-5: var(--violet-5);
+    --secondary-6: var(--violet-6);
+    --secondary-7: var(--violet-7);
+    --secondary-8: var(--violet-8);
+    --secondary-9: var(--violet-9);
+    --secondary-10: var(--violet-10);
+    --secondary-11: var(--violet-11);
+    --secondary-12: var(--violet-12);
+
+    /* Success */
+    --success-1: var(--grass-1);
+    --success-2: var(--grass-2);
+    --success-3: var(--grass-3);
+    --success-4: var(--grass-4);
+    --success-5: var(--grass-5);
+    --success-6: var(--grass-6);
+    --success-7: var(--grass-7);
+    --success-8: var(--grass-8);
+    --success-9: var(--grass-9);
+    --success-10: var(--grass-10);
+    --success-11: var(--grass-11);
+    --success-12: var(--grass-12);
+
+    --theme--gradient: linear-gradient(
+        to right,
+        var(--secondary-10),
+        var(--primary-10)
+    );
+    --theme--gradient-hover: linear-gradient(
+        to right,
+        var(--secondary-10),
+        var(--primary-11)
+    );
+    --theme--text: var(--neutral-12);
+    --theme--heading: var(--neutral-12);
+    --theme--icon-secondary: color-mix(
+        in srgb,
+        var(--secondary-8),
+        var(--secondary-9)
+    );
+
+    /* Other theme utilities */
+    --rounded-sm: 6px;
+    --rounded-md: 0.5rem;
+    --rounded-lg: 1rem;
+    --ratio-portrait: 8/9;
+    --ratio-landscape: 9/6;
+    --shadow-none: 0px 0px 0px rgb(0 0 0 / 0);
+    --shadow-base: 0px 4px 16px rgb(0 0 0 / 0.05);
+    --shadow-large: 0px 4px 32px rgb(0 0 0 / 0.12);
+}
+
+/* Base theme styles */
+
+body {
+    color: var(--neutral-12);
+}
+
+:where(h1, h2, h3, h4, h5, .heading) {
+    color: var(--neutral-12);
+}

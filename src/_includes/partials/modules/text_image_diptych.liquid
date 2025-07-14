@@ -1,0 +1,34 @@
+<section aria-labelledby="{{ module.heading | slugify }}" class="text-image-diptych | section-spacing">
+    <div class="content-wrapper">
+        <div
+            class="panes"
+            data-composition="diptych"
+            data-layout="{%- if module.options.layout == "image-left" -%} flipped {%- else -%} normal {%- endif -%}"
+        >
+            <div class="flow moderato">
+                <h2 id="{{ module.heading | slugify }}">{{ module.heading }}</h2>
+                <p>{{ module.preview }}</p>
+                {% if module.ctas %}
+                    <div class="ctas cluster">
+                        {% for link in module.ctas %}
+                            {%- capture style -%} data-theme="{{ link.style }}" {%- endcapture -%}
+                            {% sanity_link link "button-link" style %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="images">
+                {% for image in module.images %}
+                    {% if forloop.first %}
+                        {% assign style = 'featured' %}
+                    {% else %}
+                        {% assign style = 'secondary' %}
+                    {% endif %}
+                    <div class="image-wrapper">
+                        {% sanity_image image "800" "lazy" true style %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

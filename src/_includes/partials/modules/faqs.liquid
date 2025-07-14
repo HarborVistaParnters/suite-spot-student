@@ -1,0 +1,13 @@
+<section aria-labelledby="{{ module.heading | slugify }}" class="faqs | section-spacing">
+    <div class="content-wrapper">
+        <h2 id="{{ module.heading | slugify }}">{{ module.heading }}</h2>
+        <div class="grid-12">
+            {% for entry in module.items %}
+                <div class="flow allegro">
+                    <h3>{{ entry.question }}</h3>
+                    <p>{{ entry.answer }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

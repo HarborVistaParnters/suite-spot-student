@@ -1,0 +1,40 @@
+.home .location {
+    padding-inline: var(--gutter-spacing);
+    margin-inline: auto;
+
+    & .rounded-section-wrapper.with-bg-image {
+        & picture:has(.bg-image) {
+            top: 0;
+            transform: translate(-50%, 0%);
+        }
+    }
+
+    & .walkscore {
+        display: flex;
+        align-items: center;
+        gap: var(--space-s);
+        width: fit-content;
+        margin-inline: auto;
+        background-color: rgb(255 255 255 / 90%);
+        border-radius: var(--rounded-sm);
+        padding-block: var(--space-3xs);
+        padding-inline: var(--space-m);
+
+        & .number {
+            font-size: var(--step-4);
+            font-weight: var(--font-heading-weight);
+        }
+    }
+
+    & .walk-highlights {
+        & svg {
+            color: var(--theme--icon-secondary);
+        }
+
+        & p:first-of-type {
+            font-size: var(--step-1);
+            font-weight: var(--font-medium-weight);
+            margin-block-start: var(--space-2xs);
+        }
+    }
+}
