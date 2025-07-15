@@ -3,8 +3,7 @@
 {% block main %}
 <main class="utility interior" data-page-id="{{ data._id }}">
     {% render 'partials/components/page_header.liquid', page_header: data.page_header %}
-    {% comment %} troubleshoot fail to read document_ids here {% endcomment %}
-    {% if data._id == 'aa1fb61d-1a30-4ac7-a913-542739120533' %}
+    {% if data._id == sanity.document_ids.contact %}
         {% render 'partials/modules/contact_form.liquid',
             text: 'Contact us for more information about our available listings and process.'
         %}

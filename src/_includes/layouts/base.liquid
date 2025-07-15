@@ -6,7 +6,7 @@
         {% render 'partials/components/head_meta.liquid',
             data: data,
             site_settings: sanity.site_settings,
-            document_ids: document_ids,
+            document_ids: sanity.document_ids,
             page: page,
             eleventy: eleventy
         %}
@@ -14,7 +14,7 @@
     </head>
     <body>
         {% render 'partials/components/parent_site_header.liquid', brands: brands %}
-        {% assign main_navigation = sanity.navigation | find: '_id', document_ids.mainNav %}
+        {% assign main_navigation = sanity.navigation | find: '_id', sanity.document_ids.mainNav %}
         {% render 'partials/components/site_header.liquid', navigation: main_navigation %}
         {% block main %}
         {% endblock %}
