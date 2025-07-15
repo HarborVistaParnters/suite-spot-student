@@ -1,0 +1,40 @@
+.parent-site-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-block: 0.65rem;
+    padding-inline: var(--gutter-spacing);
+    background: var(--theme--gradient);
+    font-size: var(--step--1);
+    font-weight: 700;
+
+    & nav {
+        --cluster-space: 1.25rem;
+    }
+
+    & a {
+        line-height: 1.15;
+        color: rgb(255 255 255);
+        text-decoration: none;
+
+        &:hover {
+            color: rgb(255 255 255 / 85%);
+        }
+    }
+
+    & .current-site {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            height: 0.5rem;
+            width: 0.5rem;
+            background-color: white;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+        }
+    }
+}

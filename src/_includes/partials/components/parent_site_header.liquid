@@ -1,0 +1,20 @@
+<div class="parent-site-header">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" id="Layer_1" version="1.1" viewBox="0 0 50 50">
+        <rect fill="none" x="12" y="12" width="26" height="26"/>
+        <polygon fill="#fff" points="38 38 12 38 12 12 7.2 12 7.2 7.2 0 7.2 0 50 42.8 50 42.8 42.8 38 42.8 38 38"/>
+        <polygon fill="#0099f7" points="50 0 7.2 0 7.2 7.2 12 7.2 12 12 38 12 38 38 42.8 38 42.8 42.8 50 42.8 50 0"/>
+    </svg>
+    <nav class="cluster">
+        {% for brand in brands %}
+            <a
+                {% if brand.current %}
+                    class="current-site"
+                {% endif %}
+                href="{{ brand.href }}"
+                target="_blank"
+            >
+                {{- brand.title -}}
+            </a>
+        {% endfor %}
+    </nav>
+</div>

@@ -6,13 +6,15 @@
         {% render 'partials/components/head_meta.liquid',
             data: data,
             site_settings: sanity.site_settings,
+            document_ids: document_ids,
             page: page,
             eleventy: eleventy
         %}
         {% render 'partials/components/head_assets.liquid' %}
     </head>
     <body>
-        {% assign main_navigation = sanity.navigation | find: '_id', '9bc06c89-9fbf-4d77-878d-76da31b376b4' %}
+        {% render 'partials/components/parent_site_header.liquid', brands: brands %}
+        {% assign main_navigation = sanity.navigation | find: '_id', document_ids.mainNav %}
         {% render 'partials/components/site_header.liquid', navigation: main_navigation %}
         {% block main %}
         {% endblock %}

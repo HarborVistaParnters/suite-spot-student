@@ -5,7 +5,7 @@ import {
 } from "../../lib/sanity/groq_fragments/common_projections.js";
 import { sanity_client } from "../../lib/sanity/sanity_client.js";
 
-const SITE_SETTINGS_QUERY = groq`*[_type == "settings"][0] {
+const SITE_SETTINGS_QUERY = groq`*[_type == "settings_student"][0] {
     site_name,
     site_domain,
     site_contact,

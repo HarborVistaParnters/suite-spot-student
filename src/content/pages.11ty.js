@@ -23,7 +23,7 @@ export const data = {
     },
     tags: "page",
     permalink: ({ data }) => {
-        if (data._id === "b451e470-6379-42fa-839e-3cd3c2850996") {
+        if (data._id === "c7f14479-088e-4b49-b696-d8329e066097") {
             return "/";
         } else {
             return `${data.slug}/`;

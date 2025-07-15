@@ -20,6 +20,7 @@
 @import "components/form.css" layer(main);
 @import "components/tag.css" layer(main);
 @import "block/logo.css" layer(main);
+@import "block/parent-site-header.css" layer(main);
 @import "block/site-header.css" layer(main);
 @import "block/site-footer.css" layer(main);
 @import "block/text-image-diptych.css" layer(main);

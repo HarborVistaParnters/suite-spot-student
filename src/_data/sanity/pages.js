@@ -14,8 +14,9 @@ import {
     CURRENT_LISTINGS_LIST_PROJECTION,
     PROPERTIES_LIST_PROJECTION,
 } from "../../lib/sanity/groq_fragments/module_projections.js";
+import { workspaceTag } from "../../lib/utils/workspaceTag.js";
 
-const PAGES_QUERY = groq`*[_type == "page"] {
+const PAGES_QUERY = groq`*[_type == "page" && $workspaceTagID in workspaces[]._ref] {
     _id,
     _type,
     title,
@@ -42,7 +43,9 @@ const PAGES_QUERY = groq`*[_type == "page"] {
 }`;
 
 export default async function () {
-    const data = await sanity_client.fetch(PAGES_QUERY);
+    const data = await sanity_client.fetch(PAGES_QUERY, {
+        workspaceTagID: workspaceTag.id,
+    });
 
     return data;
 }
