@@ -19,11 +19,15 @@
     {% sanity_image site_settings.footer_image "1400" "lazy" true "bg-image" %}
     <div class="subfooter">
         <div class="content-wrapper cluster">
-            <div>
-                © {% get_current_year %}
-                {{ site_settings.site_name -}}
+            <div class="cluster">
+                <p>
+                    © {% get_current_year %}
+                    {{ site_settings.site_name -}}
+                </p>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-and-conditions">Terms & Conditions</a>
             </div>
-            <div>Site design by <a href="https://ds-design-studio.com/" target="_blank">DS Design</a></div>
+            <div>Site by <a href="https://ds-design-studio.com/" target="_blank">DS Design</a></div>
         </div>
     </div>
 </footer>
