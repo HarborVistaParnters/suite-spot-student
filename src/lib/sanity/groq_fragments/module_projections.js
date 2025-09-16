@@ -4,6 +4,12 @@ import {
     FEATURED_IMAGE_PROJECTION,
 } from "./common_projections.js";
 
+export const RICH_TEXT_PROJECTION = groq`_type == "rich_text" => {
+    blocks[] {
+        ...
+    }
+}`;
+
 export const HOME_HERO_PROJECTION = groq`_type == "home_hero" => {
     heading,
     preview,

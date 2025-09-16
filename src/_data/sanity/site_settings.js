@@ -9,6 +9,7 @@ const SITE_SETTINGS_QUERY = groq`*[_type == "settings_student"][0] {
     site_name,
     site_domain,
     site_contact,
+    site_phone,
     footer_image {
         ...,
         asset->

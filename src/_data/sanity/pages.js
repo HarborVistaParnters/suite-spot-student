@@ -13,6 +13,7 @@ import {
     LOCATION_HIGHLIGHTS_PROJECTION,
     CURRENT_LISTINGS_LIST_PROJECTION,
     PROPERTIES_LIST_PROJECTION,
+    RICH_TEXT_PROJECTION,
 } from "../../lib/sanity/groq_fragments/module_projections.js";
 import { workspaceTag } from "../../lib/utils/workspaceTag.js";
 
@@ -22,7 +23,7 @@ const PAGES_QUERY = groq`*[_type == "page" && $workspaceTagID in workspaces[]._r
     title,
     "slug": slug.current,
     layout,
-    layout == "default" || layout == "utility" => {
+    layout == "default" || layout == "utility" || layout == "policy" => {
         page_header {
             heading,
             "image": featuredImage ${FEATURED_IMAGE_PROJECTION}
@@ -36,7 +37,8 @@ const PAGES_QUERY = groq`*[_type == "page" && $workspaceTagID in workspaces[]._r
         ${FAQS_PROJECTION},
         ${CURRENT_LISTINGS_LIST_PROJECTION},
         ${PROPERTIES_LIST_PROJECTION},
-        ${TEXT_IMAGE_DIPTYCH_PROJECTION}
+        ${TEXT_IMAGE_DIPTYCH_PROJECTION},
+        ${RICH_TEXT_PROJECTION}
     },
     seo ${SEO_PROJECTION},
     "open_graph": openGraph ${OPEN_GRAPH_PROJECTION}

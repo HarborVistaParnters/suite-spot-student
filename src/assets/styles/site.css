@@ -24,7 +24,9 @@
 @import "block/site-header.css" layer(main);
 @import "block/site-footer.css" layer(main);
 @import "block/text-image-diptych.css" layer(main);
+@import "block/policy.css" layer(main);
 @import "block/property.css" layer(main);
+@import "block/rich-text.css" layer(main);
 @import "block/page.css" layer(main);
 @import "block/contact-form.css" layer(main);
 @import "block/amenities-list.css" layer(main);

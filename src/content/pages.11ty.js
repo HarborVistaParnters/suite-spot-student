@@ -7,6 +7,9 @@ function assign_layout(data) {
         case "utility":
             layout = "utility";
             break;
+        case "policy":
+            layout = "policy";
+            break;
         default:
             layout = "default";
             break;

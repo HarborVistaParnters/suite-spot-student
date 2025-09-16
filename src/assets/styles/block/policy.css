@@ -1,0 +1,13 @@
+.policy.interior {
+    & h1 {
+        margin-block-start: var(--space-2xl);
+    }
+
+    & .rich-text-section {
+        margin-block-start: var(--space-xl);
+    }
+
+    & + .site-footer {
+        margin-block-start: var(--section-spacing);
+    }
+}

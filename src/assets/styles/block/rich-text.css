@@ -1,0 +1,18 @@
+.rich-text {
+    --flow-space: var(--space-m);
+
+    & > * {
+        max-width: 760px;
+        margin-inline: auto;
+    }
+
+    & h2 {
+        --flow-space: var(--space-l);
+        font-size: var(--step-3);
+    }
+
+    & ul {
+        list-style: disc;
+        padding-inline-start: 1rem;
+    }
+}
